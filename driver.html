@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>405 Term Project: TMC4210.py</title>
+<title>ME405 Polar Plotter: TMC4210.py</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">405 Term Project
+   <div id="projectname">ME405 Polar Plotter
    </div>
   </td>
  </tr>
@@ -70,8 +70,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p >This class file contains the methods and attributes of the TMC4210 drivers.</p>
-<p >The file includes methods for setting target position/velocity, reading position/velocity, writing to configuration adresses, and homing/zeroing the stepper motors..</p>
-<p >Source Folder [<a href="https://github.com/Mecha12RumbaoaOsborne/ME405-TERM-PROJECT">https://github.com/Mecha12RumbaoaOsborne/ME405-TERM-PROJECT</a>] <br  />
+<p >The file includes methods for setting target position/velocity, reading position/velocity, writing to configuration adresses, and homing/ zeroing the stepper motors. These methods were developed by sending specific datagrams of lenth 32-bits to the stepper drivers. Each datagram includes a register byte (8 bits) and data bytes (can utilize up to 24 bits) sent through SPI protocol. Using the send_recv() function, we are able to recieve back a status datagram that signifies that each function works as intended. <br  />
+</p><div class="image">
+<img src="ClassDiagram.jpg" alt="" width="600px" height="700px"/>
+</div>
+<p> <br  />
+<br  />
+Source Folder [<a href="https://github.com/Mecha12RumbaoaOsborne/ME405-TERM-PROJECT">https://github.com/Mecha12RumbaoaOsborne/ME405-TERM-PROJECT</a>] <br  />
  </p><dl class="section author"><dt>Author</dt><dd>Barret Osborne </dd>
 <dd>
 Ruodolf Rumbaoa </dd></dl>

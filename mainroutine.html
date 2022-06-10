@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>405 Term Project: main.py</title>
+<title>ME405 Polar Plotter: main.py</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">405 Term Project
+   <div id="projectname">ME405 Polar Plotter
    </div>
   </td>
  </tr>
@@ -69,9 +69,12 @@ $(function() {
   <div class="headertitle"><div class="title"><a class="el" href="main_8py.html" title="Main file for polar plotter project.">main.py</a> </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >This main routine makes use of the provided scheduler to run the parsing of an hpgl file saved in baord memory, and sending insturctions(pen up/down) and coordinates to the plotter.</p>
-<p >When ran, the main routine waits for the user to press the blue button on the NucleoL476RG board. Once this press is detected, the scheduler runs the parsing and drawing task to extract instructions and coordinates from the hpgl file. The instructions are interpreted as pen up/down and the DC motor actuates according to it. The xy coordinates are converted to theta 1 and theta 2 values sento to the repective stepper. Once the task finishes a flag is raised and the steppers go back to home position. <br  />
- <br  />
+<div class="textblock"><p >This main routine makes use of the provided scheduler to run the parsing of an hpgl file saved in baord memory, and sending insturctions (pen up/down) and coordinates to the plotter.</p>
+<p >When ran, the main routine waits for the user to press the blue button on the NucleoL476RG board. Once this press is detected, a task share is set to 1 signaling the beginning of the program.The scheduler runs the parsing task to extract instructions and coordinates from the hpgl file. The instructions are interpreted as pen up/down and the DC motor actuates according to it. The xy coordinates are converted to theta 1 and theta 2 values approximated by NewtoRaphson and are sent to their repective stepper motor. Once the task finishes a flag is raised and the steppers go back to home position. <br  />
+</p><div class="image">
+<img src="mainroutinediagram.png" alt="" width="800px" height="500px"/>
+</div>
+ <center>Figure 1. Main routine state flow diagram.</center><p> <br  />
  Source Folder [<a href="https://github.com/Mecha12RumbaoaOsborne/ME405-TERM-PROJECT">https://github.com/Mecha12RumbaoaOsborne/ME405-TERM-PROJECT</a>] <br  />
  </p><dl class="section author"><dt>Author</dt><dd>Barret Osborne </dd>
 <dd>
