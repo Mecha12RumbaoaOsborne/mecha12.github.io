@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ME405 Polar Plotter: ME405</title>
+<title>ME 405 TERM PROJECT: ME405</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ME405 Polar Plotter
+   <div id="projectname">ME 405 TERM PROJECT
    </div>
   </td>
  </tr>
@@ -89,14 +89,19 @@ Demonstration</h2>
 <h2><a class="anchor" id="autotoc_md3"></a>
 Mechanical Design</h2>
 <p >One of the NEMA 17 steppers mount on a 3D printed structure that is mounted on a white board and a piece of 3/4 plywood. This stepper is used to drvie the revolute motion of the plotter arm. The second stepper is used to drive the translation along the plotter's arm using a belt and pulley system. The pen and DC motor are mounted on the arm and translates when the belt is driven by the second stepper motor. The arm sits on a lazy susan bearing. A wheel is also connected to the end of the arm to provide additional support. <br  />
-</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+</p><div class="image">
+<img src="armass.png" alt="" width="1000px" height="700px"/>
+</div>
+ <center>Figure 1. Full assembly CAD model.</center> <div class="image">
+<img src="closeups.png" alt="" width="1600px" height="600px"/>
+</div>
+ <center>Figure 2. Closeups of penholder and motor/arm mounts.</center> <h2><a class="anchor" id="autotoc_md4"></a>
 Stepper Drivers</h2>
 <p >The TMC4210 driver class file is used to control the position or velocity of the steppers and can be used for different functions like, enable/disable, position/velocity reading, taget position/velocity setting, zeroing, and homing. The main routine uses a shceduler provided by the instructor of the class to run the tasks necessary to interpret an hpgl file stored in board memory and draw it on a white board. Inkscape was used to generate an hpgl file from desired image files. When the main routine is ran, the plotter waits for a button input to begin using the scheduler to parse the hpgl files for instructions and coordinates which are then sent to the steppers as integer theta inputs. The plotter then draws the image point by point until it finishes. Finally, when the drawing is finished the motors home to their original states. The driver class was designed accordingly to include those methods and the attributes necessary to implement those methods like several timer and pin objects. <br  />
 </p><div class="image">
 <img src="ClassDiagram.jpg" alt="" width="500px" height="600px"/>
 </div>
- <center>Figure 1. Driver class design.</center><p> <br  />
+ <center>Figure 3. Driver class design.</center><p> <br  />
 </p>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Modeling</h2>
@@ -107,12 +112,12 @@ Modeling</h2>
  <div class="image">
 <img src="Kinematics2.jpg" alt="" width="600px" height="700px"/>
 </div>
- <center>Figure 2. Polar plotter kinematic model and position/jacobian equations.</center><p> <br  />
+ <center>Figure 4. Polar plotter kinematic model and position/jacobian equations.</center><p> <br  />
 Using NewtonRaphson equation above, we set developed functions to iteratively solve for motor angles based on desired xy coordinates. Here is a code snippet of those fucntions: <br  />
 </p><div class="image">
 <img src="newtonraphsonsnippet.png" alt=""/>
 </div>
- <center>Figure 3. NewtonRaphson implementation code snippet.</center><p> <br  />
+ <center>Figure 5. NewtonRaphson implementation code snippet.</center><p> <br  />
 </p>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Future Improvements</h2>
